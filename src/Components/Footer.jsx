@@ -73,7 +73,7 @@ function Footer() {
               className="form-control"
               placeholder="enter your email"
             />
-            <button className="btn btn-primary ms-3">subscribe</button>
+            <button className="btn btn-primary ms-3"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
           <div className="icons fs-4 d-flex justify-content-evenly mt-4">
           
