@@ -6,11 +6,17 @@ import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { removeFromWishlist } from "../redux/Slices/wishlistSlice";
+import { addToCart } from '../redux/Slices/cartSlice';
 
 function Wishlist() {
   const WishlistArray = useSelector((state)=>state.wishlistReducer)
   const dispatch = useDispatch()
 
+
+  const handleWishlistCart = (product) =>{
+      dispatch (addToCart(product))
+      dispatch (removeFromWishlist(product.id))
+  }
 
   return (
     <div style={{marginTop:'100px'}}>
@@ -30,7 +36,7 @@ function Wishlist() {
                   <Button onClick={()=>dispatch(removeFromWishlist(product.id))} className="btn ">
                     <i className="fa-solid fa-trash text-danger fa-2x"></i>
                   </Button>
-                  <Button className="btn ">
+                  <Button onClick={()=>{handleWishlistCart(product)}} className="btn ">
                     <i className="fa-solid fa-cart-plus text-success fa-2x"></i>
                   </Button>
                 </div>
