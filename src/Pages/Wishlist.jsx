@@ -44,7 +44,7 @@ function Wishlist() {
             </Card>
           </Col>
           )):<div style={{height:'60vh'}} className='w-100 d-flex flex-column justify-content-center align-items-center'>
-            <img src="" alt="" />
+            <img height={'230px'} src="https://cdn-icons-gif.flaticon.com/8797/8797960.gif" alt="" />
             <h3 className='fw-bolder text-primary'>Your Wishlist is Empty!!</h3>
             <Link className='text-decoration-none btn btn-success rounded mt-3' to={'/'}>Back to Home</Link>
           </div>

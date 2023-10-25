@@ -1,13 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { removeFromCart } from "../redux/Slices/cartSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { removeFromCart,emptyCart } from "../redux/Slices/cartSlice";
 import { useState,useEffect } from "react";
 
 
 
 function Cart() {
+
+  const navigate = useNavigate()
+  
+
   const CartArray = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
 
@@ -21,6 +25,14 @@ function Cart() {
       setTotal(0)
     }
   }
+
+
+  const handleCart = ()=>{
+    dispatch(emptyCart())
+    alert("Order successfully Placed.. Thank You for Purchasing with us!!")
+    navigate('/')
+  }
+
   useEffect(()=>{
     getCartTotal()
   },[CartArray])
@@ -64,7 +76,7 @@ function Cart() {
               <h4 className='mt-5'>Total Products: <span> {CartArray.length} </span></h4>
               <h4>Total : <span className='text-danger fw-bolder fs-5'>${total}</span></h4>
               <div className='d-grid mt-5'>
-                <button className='btn btn-success rounded'>CheckOut</button>
+                <button onClick={handleCart} className='btn btn-success rounded'>CheckOut</button>
               </div>
             </div>
           </div>
