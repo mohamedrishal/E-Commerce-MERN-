@@ -29,10 +29,10 @@ function Home() {
                 </Card.Text>
                 <div className="d-flex justify-content-between">
                   <Button onClick={()=>dispatch(addToWishlist(product))} className="btn ">
-                    <i className="fa-regular fa-heart text-danger fa-2x"></i>
+                    <i className="fa-regular fa-heart text-danger fs-5"></i>
                   </Button>
                   <Button onClick={()=>dispatch(addToCart(product))} className="btn ">
-                    <i className="fa-solid fa-cart-plus text-success fa-2x"></i>
+                    <i className="fa-solid fa-cart-plus text-success fs-5"></i>
                   </Button>
                 </div>
               </Card.Body>
